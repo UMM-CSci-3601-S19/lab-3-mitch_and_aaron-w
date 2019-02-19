@@ -1,3 +1,5 @@
+# This is to see if Travis can build the project as-is
+
 # Lab Tasks
 
 - Questions that you need to answer (as a group!) are indicated with question
