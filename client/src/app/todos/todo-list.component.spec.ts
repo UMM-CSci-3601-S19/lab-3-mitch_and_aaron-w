@@ -113,12 +113,20 @@ describe('Todo list', () => {
       .subscribe(x => expect(todoList.filteredTodos.length).toBe(0));
   });
 
-  it('todo list filters by status', () => {
+  it('todo list filters by status: true', () => {
     expect(todoList.filteredTodos.length).toBe(3);
     todoList.todoStatus = 'true';
     const a: Observable<Todo[]> = todoList.refreshTodos();
     a.do(x => Observable.of(x))
       .subscribe(x => expect(todoList.filteredTodos.length).toBe(1));
+  });
+
+  it('todo list filters by status: false', () => {
+    expect(todoList.filteredTodos.length).toBe(3);
+    todoList.todoStatus = 'false';
+    const a: Observable<Todo[]> = todoList.refreshTodos();
+    a.do(x => Observable.of(x))
+      .subscribe(x => expect(todoList.filteredTodos.length).toBe(2));
   });
 
   it('todo list filters by owner', () => {
@@ -129,10 +137,49 @@ describe('Todo list', () => {
       .subscribe(x => expect(todoList.filteredTodos.length).toBe(0));
   });
 
-  it('todo list filters by owner, really', () => {
+  it('todo list filters by owner: blanche', () => {
+    expect(todoList.filteredTodos.length).toBe(3);
+    todoList.todoOwner = 'blanche';
+    const a: Observable<Todo[]> = todoList.refreshTodos();
+    a.do(x => Observable.of(x))
+      .subscribe(x => expect(todoList.filteredTodos.length).toBe(1));
+  });
+
+  it('todo list filters by owner: dawn', () => {
+    expect(todoList.filteredTodos.length).toBe(3);
+    todoList.todoOwner = 'dawn';
+    const a: Observable<Todo[]> = todoList.refreshTodos();
+    a.do(x => Observable.of(x))
+      .subscribe(x => expect(todoList.filteredTodos.length).toBe(1));
+  });
+
+  it('todo list filters by owner: roberta', () => {
+    expect(todoList.filteredTodos.length).toBe(3);
+    todoList.todoOwner = 'roberta';
+    const a: Observable<Todo[]> = todoList.refreshTodos();
+    a.do(x => Observable.of(x))
+      .subscribe(x => expect(todoList.filteredTodos.length).toBe(1));
+  });
+
+  it('todo list filters by owner: Blanche', () => {
     expect(todoList.filteredTodos.length).toBe(3);
     todoList.todoOwner = 'Blanche';
-    console.log(todoList.todos);
+    const a: Observable<Todo[]> = todoList.refreshTodos();
+    a.do(x => Observable.of(x))
+      .subscribe(x => expect(todoList.filteredTodos.length).toBe(1));
+  });
+
+  it('todo list filters by owner: Dawn', () => {
+    expect(todoList.filteredTodos.length).toBe(3);
+    todoList.todoOwner = 'Dawn';
+    const a: Observable<Todo[]> = todoList.refreshTodos();
+    a.do(x => Observable.of(x))
+      .subscribe(x => expect(todoList.filteredTodos.length).toBe(1));
+  });
+
+  it('todo list filters by owner: Roberta', () => {
+    expect(todoList.filteredTodos.length).toBe(3);
+    todoList.todoOwner = 'Roberta';
     const a: Observable<Todo[]> = todoList.refreshTodos();
     a.do(x => Observable.of(x))
       .subscribe(x => expect(todoList.filteredTodos.length).toBe(1));
