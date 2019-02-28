@@ -73,7 +73,6 @@ export class TodoListComponent implements OnInit {
       });
     }
 
-    console.log(this.filteredTodos.length);
     return this.filteredTodos;
   }
 
