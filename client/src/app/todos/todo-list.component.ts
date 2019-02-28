@@ -20,6 +20,7 @@ export class TodoListComponent implements OnInit {
   public todoStatus: string;
   public todoBody: string;
   public todoCategory: string;
+  public bgColor: string;
 
 
   // Inject the TodoListService into this component.
@@ -74,6 +75,14 @@ export class TodoListComponent implements OnInit {
     }
 
     return this.filteredTodos;
+  }
+
+  setBgColor(string): string {
+    if(string == "true") {
+      return("green");
+    } else {
+      return("red");
+    }
   }
 
   /**
