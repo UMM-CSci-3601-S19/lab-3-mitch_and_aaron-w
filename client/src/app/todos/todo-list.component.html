@@ -1,10 +1,11 @@
-<div layout-gt-sm="row">
-  <div flex-gt-sm="80" flex-offset-gt-sm="10">
-    <mat-card>
-      <mat-card-title id="todo-list-title">Todos</mat-card-title>
-      <mat-divider></mat-divider>
-      <mat-card-content>
-        <mat-form-field>
+<body bgcolor="#E6E6FA">
+<div layout-gt-sm="row" class = "row1">
+  <div flex-gt-sm="80" flex-offset-gt-sm="10" class = "divThing">
+    <mat-card class = matCard1>
+      <mat-card-title id="todo-list-title" class = "todoTitle">Todos</mat-card-title>
+      <mat-divider class = "todoTitle3"></mat-divider>
+      <mat-card-content class = "todoTitle2">
+        <mat-form-field class = "todoTitle4">
           <input matInput id="todoId" #input placeholder="Filter by ID"
                  (input)="todoId = $event.target.value">
         </mat-form-field>
@@ -25,10 +26,10 @@
                (input)="todoBody = $event.target.value">
         </mat-form-field>
 
-        <div *ngIf="todos; else todosError">
-          <mat-card #elem [id]="todo._id" matTooltip="{{todo._id}}" *ngFor="let todo of this.filterTodos(todoId, todoStatus, todoCategory, todoOwner, todoBody)">
-            <!--<mat-card-header [style.backgroundColor] = "this.setBgColor(todoStatus).toString()"></mat-card-header>-->
-            <mat-card-content>{{todo.owner}}</mat-card-content>
+        <div class = "todos" *ngIf="todos; else todosError">
+          <mat-card class = "todosCard" #elem [id]="todo._id" matTooltip="{{todo._id}}" *ngFor="let todo of this.filterTodos(todoId, todoStatus, todoCategory, todoOwner, todoBody)">
+            <!--<mat-card-header [style.backgroundColor] = "'green'">help</mat-card-header>-->
+            <mat-card-content class = "todoContent">{{todo.owner}}</mat-card-content>
             <mat-card-content>{{todo.category}}</mat-card-content>
             <mat-card-content>{{todo.status}}</mat-card-content>
             <mat-card-content>{{todo.body}}</mat-card-content>
