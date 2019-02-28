@@ -26,7 +26,7 @@
         </mat-form-field>
 
         <div *ngIf="todos; else todosError">
-          <mat-card matTooltip="{{todo._id}}" *ngFor="let todo of this.filterTodos(todoId, todoStatus, todoCategory, todoOwner, todoBody)">
+          <mat-card #elem [id]="todo._id" matTooltip="{{todo._id}}" *ngFor="let todo of this.filterTodos(todoId, todoStatus, todoCategory, todoOwner, todoBody)">
             <!--<mat-card-header [style.backgroundColor] = "this.setBgColor(todoStatus).toString()"></mat-card-header>-->
             <mat-card-content>{{todo.owner}}</mat-card-content>
             <mat-card-content>{{todo.category}}</mat-card-content>

@@ -34,7 +34,7 @@ describe('User list', () => {
         page.typeAName("t");
         expect(page.getUniqueUser("kittypage@surelogic.com")).toEqual("Kitty Page");
         page.backspace();
-        page.typeAName("lynn")
+        page.typeAName("lynn");
         expect(page.getUniqueUser("lynnferguson@niquent.com")).toEqual("Lynn Ferguson");
     });
 
@@ -46,7 +46,7 @@ describe('User list', () => {
         }
 
         expect(page.getUniqueUser("stokesclayton@momentia.com")).toEqual("Stokes Clayton");
-
+        expect(page.getUniqueUser("boltonmonroe@vinch.com")).toEqual("Bolton Monroe");
         expect(page.getUniqueUser("merrillparker@escenta.com")).toEqual("Merrill Parker");
 
     });
